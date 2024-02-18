@@ -1,5 +1,20 @@
 import requests
 from bs4 import BeautifulSoup
+import requests
+
+def kontrol_et(url):
+    # Ensure valid URL with scheme
+    url_payload = ensure_valid_url(url)
+
+    try:
+        response = requests.get(url_payload)
+        # Proceed with your code using the response object
+    except requests.exceptions.MissingSchema:
+        print("Error: Invalid URL. Please include http:// or https://")
+    except requests.exceptions.RequestException as e:
+        print(f"Error: {e}")
+
+# ... rest of your code
 
 def kontrol_et(url):
     """
